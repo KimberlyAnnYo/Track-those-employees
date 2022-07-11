@@ -1,6 +1,6 @@
 const mysql = require("mysql");
 const inquirer = require("inquirer");
-const ctable = require("consol.table");
+const ctable = require("console.table");
 
 class Database {
     constructor(config) {
@@ -308,7 +308,7 @@ async function removeRole() {
     })
 };
 
-// Add a new department to the database
+
 async function addDepartment() {
     inquirer.prompt([
         {
@@ -324,7 +324,7 @@ async function addDepartment() {
     })
 };
 
-// Remove a department from the database
+
 async function removeDepartment() {
     let departments = await db.query('SELECT id, name FROM department');
     departments.push({ id: null, name: "Cancel" });
@@ -346,7 +346,7 @@ async function removeDepartment() {
     })
 };
 
-// Options to make changes to employees specifically
+
 function editEmployeeOptions() {
     inquirer.prompt({
         name: "editChoice",
@@ -380,7 +380,8 @@ function editEmployeeOptions() {
     })
 };
 
-// Options to make changes to roles
+
+
 function editRoleOptions() {
     inquirer.prompt({
         name: "editRoles",
@@ -410,7 +411,9 @@ function editRoleOptions() {
     })
 };
 
-// Options to make changes to departments
+
+
+
 function editDepartmentOptions() {
     inquirer.prompt({
         name: "editDeps",
@@ -436,7 +439,9 @@ function editDepartmentOptions() {
     })
 };
 
-// Main interface loop. Called after pretty much every function completes
+
+
+
 function runApp() {
     inquirer.prompt({
         name: "mainmenu",
@@ -473,15 +478,4 @@ function runApp() {
         }
     });
 }
-
-// Title screen on app start. Nice ASCII art lol
-console.log("_______  __   __  _______    _______  ______    _______  _______  ___   _  _______  ______\n|       ||  |_|  ||       |  |       ||    _ |  |   _   ||       ||   | | ||       ||    _ |\n|       ||       ||  _____|  |_     _||   | ||  |  |_|  ||       ||   |_| ||    ___||   | ||\n|       ||       || |_____     |   |  |   |_||_ |       ||       ||      _||   |___ |   |_||_ \n|      _||       ||_____  |    |   |  |    __  ||       ||      _||     |_ |    ___||    __  |\n|     |_ | ||_|| | _____| |    |   |  |   |  | ||   _   ||     |_ |    _  ||   |___ |   |  | |\n|_______||_|   |_||_______|    |___|  |___|  |_||__| |__||_______||___| |_||_______||___|  |_|\n\nVersion Almost\n");
-
 runApp();
-
-// async function testFunc() {
-//     let employees = await db.query('SELECT * FROM employee');
-//     console.log(employees);
-// }
-
-// testFunc();
