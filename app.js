@@ -1,6 +1,5 @@
 const mysql = require("mysql2");
-import "inquirer";
-// const inquirer = require("inquirer");
+var inquirer = require("inquirer");
 const ctable = require("console.table");
 
 
@@ -10,6 +9,8 @@ const connection = mysql.createConnection({
     user: 'root',
     database: 'employee'
   });
+
+
 
 
 // async function showEmployeeSummary() {
@@ -415,6 +416,7 @@ const connection = mysql.createConnection({
 
 
 function runApp() {
+
     inquirer.prompt({
         name: "mainmenu",
         type: "list",
