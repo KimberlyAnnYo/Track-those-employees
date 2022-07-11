@@ -54,4 +54,22 @@ async function showRoleSummary() {
     })
 };
 
+async function showDepartments() {
+    console.log(' ');
+    await db.query('SELECT id, name AS department FROM department', (err, res) => {
+        if (err) throw err;
+        console.table(res);
+        runApp();
+    })
+};
+
+
+async function confirmStringInput (input) {
+    if ((input.trim() != "") && (input.trim().length <= 30)) {
+        return true;
+    }
+    return "limit characters to 30 or less!"
+};
+
+
 
