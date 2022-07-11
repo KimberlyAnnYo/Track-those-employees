@@ -240,7 +240,7 @@ async function addRole() {
     })
 };
 
-// Updates a role on the database
+
 async function updateRole() {
     let roles = await db.query('SELECT id, title FROM role');
     roles.push({ id: null, title: "Cancel" });
@@ -286,7 +286,7 @@ async function updateRole() {
     })
 };
 
-// Remove a role from the database
+
 async function removeRole() {
     let roles = await db.query('SELECT id, title FROM role');
     roles.push({ id: null, title: "Cancel" });
