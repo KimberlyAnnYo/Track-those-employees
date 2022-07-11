@@ -20,7 +20,7 @@
     "homepage": "https://github.com/KimberlyAnnYo/Track-those-employees/blob/main/README.md",
     "dependencies": {
         "console.table": "^0.10.0",
-        "inquirer": "^7.0.0",
+        "inquirer": "^9.0.0",
         "mysql2": "^2.3.3"
     }
 }
